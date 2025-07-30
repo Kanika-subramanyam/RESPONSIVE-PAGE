@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #f5f0e6, #e7d9c4); 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('coffee-beans.png'); 
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 180px;
+}
+
+nav {
+  background-color: #5c3a21; 
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.menu img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+li label {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffe9c8;
+}
+
+li label:hover {
+  color: #ffcf91;
+  text-decoration: underline;
+}
+
+.dp {
+  position: relative;
+  color: #ffe9c8;
+}
+
+.dp:hover {
+  color: #ffcf91;
+  cursor: pointer;
+}
+
+.dp .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #3e2a1a;
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.dp:hover .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  padding: 8px 20px;
+  color: #fff7ec;
+  white-space: nowrap;
+}
+
+.dropdown li:hover {
+  background-color: #6f4f2c;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fade 0.5s ease-in-out;
+  color: #3e2a1a;
+}
+
+.tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#tab-home:checked ~ .main .home,
+#tab-about:checked ~ .main .about,
+#tab-contact:checked ~ .main .contact {
+  display: block;
+  opacity: 1;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #4e342e;
+}
+
+.one {
+  color: #8d4c28;
+  padding: 10px;
+  font-style: italic;
+  display: block;
+}
+
+#pic {
+  width: 500px;
+  height: 370px;
+  margin-top: 20px;
+  border: 3px solid #6d4c41;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #4b2e2e;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
